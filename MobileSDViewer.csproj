@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>MobileSDViewer</RootNamespace>
+    <AssemblyName>MobileSDViewer</AssemblyName>
+    <ApplicationTitle>MobileSDViewer</ApplicationTitle>
+    <Product>MobileSDViewer</Product>
+    <Description>通过 ADB 浏览与管理 Android 设备文件</Description>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Assets\app.ico"/>
+    <Resource Include="Assets\app.png"/>
+  </ItemGroup>
+</Project>

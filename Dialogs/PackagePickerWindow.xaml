@@ -1,0 +1,28 @@
+<Window x:Class="MobileSDViewer.Dialogs.PackagePickerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="选择应用包" Height="500" Width="540"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        FontFamily="Segoe UI" Background="{StaticResource BrushBg}"
+        UseLayoutRounding="True">
+    <Border Padding="20">
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" Margin="0,0,0,12"
+                       Foreground="{StaticResource BrushMuted}"
+                       Text="无法直接列出 Android/data 时，选择一个包并尝试 run-as（仅 debuggable 有效）。"/>
+            <DockPanel DockPanel.Dock="Top" Margin="0,0,0,12">
+                <TextBlock Text="筛选" Style="{StaticResource FieldLabel}"/>
+                <TextBox x:Name="FilterBox" TextChanged="FilterBox_TextChanged"/>
+            </DockPanel>
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+                <CheckBox x:Name="SystemCheck" Content="显示系统应用" VerticalAlignment="Center" Margin="0,0,16,0" Click="SystemCheck_Click"/>
+                <Button Content="取消" Width="88" IsCancel="True" Margin="0,0,8,0"/>
+                <Button Content="确定" Width="88" Style="{StaticResource AccentButton}" IsDefault="True" Click="Ok_Click"/>
+            </StackPanel>
+            <Border Style="{StaticResource PanelCard}" Padding="4">
+                <ListBox x:Name="PackageList" BorderThickness="0" Background="Transparent"
+                         MouseDoubleClick="PackageList_MouseDoubleClick"/>
+            </Border>
+        </DockPanel>
+    </Border>
+</Window>
